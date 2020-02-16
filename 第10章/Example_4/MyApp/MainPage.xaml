@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="MyApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <CaptureElement Name="capele"/>
+        <Border HorizontalAlignment="Right" Padding="15" Background="#59000000">
+            <StackPanel Width="120" >
+                <RadioButton Content="拍照片" Checked="OnRdbtnChecked" Tag="1" Name="rdbPhoto"/>
+                <RadioButton Content="錄視訊" Margin="0,0,0,40" Checked="OnRdbtnChecked" Tag="2" Name="rdbRecord"/>
+                <Button Name="btnCapPhoto" Visibility="Collapsed" Content="拍照" Click="OnCapturePhoto" />
+                <ToggleButton Name="btnRec" Content="開始錄制" Visibility="Collapsed" Checked="OnStartRecord" Unchecked="OnStopRecord" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="MyApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <Storyboard x:Key="std" x:Name="std" RepeatBehavior="Forever">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ttf" Storyboard.TargetProperty="Y" Duration="0:0:10">
+                <LinearDoubleKeyFrame KeyTime="0:0:2" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:6" Value="-300">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuinticEase/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <LinearDoubleKeyFrame KeyTime="0:0:10" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
+    
+    <Grid>
+        <Rectangle Width="100" Height="100" Fill="Khaki">
+            <Rectangle.RenderTransform>
+                <TranslateTransform x:Name="ttf"/>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+    </Grid>
+</Page>

@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="MyApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel>
+        <!--<Rectangle Margin="1,15" Height="120">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="Gray"/>
+            </Rectangle.Fill>
+        </Rectangle>-->
+        <Rectangle Margin="1,15" Fill="Gray" Height="120"/>
+
+        <Rectangle Margin="1,10" Height="100" Fill="#FFD3E8CC"/>
+    </StackPanel>
+</Page>

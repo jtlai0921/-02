@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="MyApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ItemsControl Margin="6">
+            <x:String>Hello</x:String>
+            <Rectangle Height="12" Fill="Yellow"/>
+            <x:Int32>600000</x:Int32>
+            <TextBox />
+        </ItemsControl>
+        
+        <ItemsControl x:Name="itc" Grid.Row="1" Margin="6"/>
+    </Grid>
+</Page>

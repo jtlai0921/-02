@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="MyApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.Resources>
+            <BitmapImage x:Key="bmp" UriSource="Assets/car.png" />
+            <DataTemplate x:Key="carItem">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Width="100" VerticalAlignment="Top" Source="{StaticResource bmp}"/>
+                    <TextBlock Grid.Column="1" Margin="11,0,0,0" FontSize="20">
+                        汽車標誌：
+                        <Run Text="{Binding ID}"/>
+                        <LineBreak/>
+                        時速：
+                        <Run Text="{Binding Speed}"/>
+                        <LineBreak/>
+                        年份：
+                        <Run Text="{Binding Year}"/>
+                    </TextBlock>
+                </Grid>
+            </DataTemplate>
+        </Grid.Resources>
+        <ListBox x:Name="lbCars" Margin="30,15" ItemTemplate="{StaticResource carItem}"/>
+    </Grid>
+</Page>

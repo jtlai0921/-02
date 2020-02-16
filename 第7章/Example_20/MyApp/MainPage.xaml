@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="MyApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Canvas>
+            <Rectangle Fill="#FFF3F96C" Width="200" Height="200" Canvas.Top="0" Canvas.Left="200">
+                <Rectangle.Transform3D>
+                    <CompositeTransform3D RotationX="90" CenterY="200" />
+                </Rectangle.Transform3D>
+            </Rectangle>
+            <Rectangle Width="200" Height="200" Fill="#FFAAD612" Canvas.Left="0" Canvas.Top="200">
+                <Rectangle.Transform3D>
+                    <CompositeTransform3D CenterX="200" RotationY="-90"/>
+                </Rectangle.Transform3D>
+            </Rectangle>
+            <Rectangle Width="200" Height="200" Fill="#FFF8FBB8" Canvas.Left="200" Canvas.Top="200">
+                <Rectangle.Transform3D>
+                    <CompositeTransform3D TranslateZ="200"/>
+                </Rectangle.Transform3D>
+            </Rectangle>
+
+            <Canvas.Transform3D>
+                <PerspectiveTransform3D OffsetX="-700" OffsetY="-300" Depth="900"/>
+            </Canvas.Transform3D>
+        </Canvas>
+    </Grid>
+</Page>

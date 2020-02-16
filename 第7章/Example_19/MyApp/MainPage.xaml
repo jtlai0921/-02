@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="MyApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Text="測試文字" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="100">
+            <TextBlock.Projection>
+                <PlaneProjection RotationY="60" GlobalOffsetZ="200" LocalOffsetX="-60"/>
+            </TextBlock.Projection>
+        </TextBlock>
+        
+        <Image Grid.Row="1" Source="08.jpeg" Margin="20">
+            <Image.Projection>
+                <PlaneProjection RotationZ="5" RotationX="-30" RotationY="-45" GlobalOffsetX="15"/>
+            </Image.Projection>
+        </Image>
+        
+    </Grid>
+</Page>

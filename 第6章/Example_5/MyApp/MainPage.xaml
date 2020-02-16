@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="MyApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <Page.Resources>
+        <local:Employee x:Name="sampleEmp" ID="5000081" Name="小李"/>
+    </Page.Resources>
+
+    <StackPanel DataContext="{Binding Source={StaticResource sampleEmp}}">
+        <TextBox Header="員工ID：" Text="{Binding Path=ID,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Header="貢工姓名：" Text="{Binding Path=Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+        <Rectangle Height="2" Fill="White" Margin="0,20"/>
+        <TextBlock FontSize="22">
+            員工ID：
+            <Run Text="{Binding Path=ID}"/>
+        </TextBlock>
+        <TextBlock FontSize="22">
+            員工姓名：
+            <Run Text="{Binding Path=Name}"/>
+        </TextBlock>
+    </StackPanel>
+</Page>

@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="MyApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <HyperlinkButton Content="Sample 1" Click="OnClick" Tag="1"/>
+            <HyperlinkButton Margin="60,0,0,0" Content="Sample 2" Click="OnClick" Tag="2"/>
+        </StackPanel>
+        
+        <Frame Grid.Row="1" Margin="15" Name="frm"/>
+    </Grid>
+</Page>

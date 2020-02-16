@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="MyApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <Page.Resources>
+        <CollectionViewSource x:Key="cvs" x:Name="cvsData" IsSourceGrouped="True"/>
+    </Page.Resources>
+
+    <Grid>
+        <SemanticZoom>
+            <SemanticZoom.ZoomedOutView>
+                <GridView ItemsSource="{Binding Source={StaticResource cvs},Path=CollectionGroups}" ScrollViewer.IsHorizontalScrollChainingEnabled="False" Background="#CC000000">
+                    <GridView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock FontSize="40" Text="{Binding Group.Key}" Foreground="Black"/>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                    <GridView.ItemContainerStyle>
+                        <Style TargetType="GridViewItem">
+                            <Setter Property="Background" Value="LightYellow"/>
+                            <Setter Property="BorderBrush" Value="Yellow" />
+                            <Setter Property="BorderThickness" Value="2"/>
+                            <Setter Property="Width" Value="100" />
+                            <Setter Property="Height" Value="100"/>
+                            <Setter Property="Margin" Value="12"/>
+                        </Style>
+                    </GridView.ItemContainerStyle>
+                </GridView>
+            </SemanticZoom.ZoomedOutView>
+            
+            <SemanticZoom.ZoomedInView>
+                <ListView ItemsSource="{Binding Source={StaticResource cvs}}" ScrollViewer.IsVerticalScrollChainingEnabled="False" Background="LightGray">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock FontSize="20" Foreground="Black" Text="{Binding}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock FontSize="32" FontWeight="Bold" Text="{Binding Key}"/>
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                            <GroupStyle.HeaderContainerStyle>
+                                <Style TargetType="ListViewHeaderItem">
+                                    <Setter Property="Background" Value="DarkBlue"/>
+                                    <Setter Property="Padding" Value="2,5"/>
+                                </Style>
+                            </GroupStyle.HeaderContainerStyle>
+                        </GroupStyle>
+                    </ListView.GroupStyle>
+                </ListView>
+            </SemanticZoom.ZoomedInView>
+        </SemanticZoom>
+    </Grid>
+</Page>
